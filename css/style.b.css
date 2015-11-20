@@ -1,0 +1,211 @@
+* {
+  font-family: "Meiryo"; }
+
+body {
+  overflow: hidden; }
+
+input, button, select, option {
+  font-family: "MS UI Gothic"; }
+
+select[size] {
+  font-family: "Meiryo"; }
+
+.sc_box_tr {
+  height: 48px; }
+
+.sc_box_td {
+  width: 48px;
+  height: 48px;
+  border: 1px solid gray;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: crosshair;
+  padding: 0 1px 1px 0;
+  box-sizing: content-box; }
+
+#sc_ground {
+  border-collapse: collapse;
+  position: relative;
+  /*z-index: 1;*/ }
+
+.pla_footer_menu {
+  display: inline-block;
+  /*_display: inline;*/ }
+
+.pla_obj {
+  width: 100px;
+  height: 100px;
+  /*background-image: url('images/objs/dokan.png'); */
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -19px;
+  top: 331px;
+  z-index: 1;
+  cursor: move; }
+
+table {
+  table-layout: fixed; }
+
+#sc_ground_window {
+  width: 100%;
+  margin: 0;
+  height: 100%;
+  overflow: scroll;
+  padding: 5px;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../images/skybox/sky-w1.png");
+  position: relative; }
+
+#pla_objects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0; }
+
+#sc_inspector {
+  float: right;
+  width: 20%;
+  height: 100%;
+  overflow-y: scroll; }
+
+.pla_obj_select {
+  border: 1px solid black; }
+
+.pla_tab {
+  height: 100%; }
+
+h3 {
+  margin: 0; }
+
+html {
+  height: 100%; }
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  /*padding-bottom: 30px;*/
+  height: 100%; }
+
+#pla_page {
+  margin: 0;
+  height: 100%; }
+
+#pla_footer {
+  border-top: 1px solid gray;
+  position: fixed;
+  width: 100%;
+  height: 30px;
+  bottom: 0px;
+  left: 0; }
+
+#sc_output {
+  width: 100%;
+  height: 80%;
+  margin-bottom: 5px;
+  resize: none; }
+
+textarea {
+  width: 100%;
+  height: 90%; }
+
+#pla_objects_select {
+  height: 100%;
+  width: 60%;
+  float: left; }
+
+#pla_object_preview {
+  max-width: 40%;
+  max-height: 40%; }
+
+#pla_object_description {
+  height: 40%; }
+
+#pla_tools #pla_tools_items {
+  border-collapse: collapse;
+  margin: 0 auto; }
+  #pla_tools #pla_tools_items tr td {
+    width: 40px;
+    height: 40px; }
+
+#newfooter {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  padding: 0 40px 10px 40px;
+}
+#newfooter .nf-group .nf-icon {
+  background-color: #3ED8FF;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50px;
+  user-select: none;
+  transition: transform 0.4s cubic-bezier(.56,-1.76,.34,3.29) 0s;
+  cursor: pointer;
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  font-size: 18px;
+  width: 50px;
+}
+#newfooter .nf-group:hover .nf-menu {
+  opacity: 1;
+}
+#newfooter .nf-group .nf-menu {
+  position: relative;
+  bottom: 200%;
+  width: 125px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0px;
+  left: -32px;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(.45,.05,.55,.95) 0s;
+}
+#newfooter .nf-group:hover .nf-icon {
+  transform: scale(1.2);
+}
+#newfooter .nf-group {
+  float: left;
+  margin-right: 30px;
+  width: 50px;
+  height: 50px;
+}
+#newfooter .nf-group .nf-iconmenu {
+  list-style-type: none;
+  position: fixed;
+  bottom: 65px;
+  padding-left: 5px;
+}
+#newfooter .nf-group .nf-iconmenu li {
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  background-color: #0f0;
+  transform: scale(0);
+  transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55) 0s;
+  margin-bottom: 10px;
+  text-align:center;
+  line-height:40px;
+  cursor: pointer;
+}
+#newfooter .nf-group .nf-iconmenu li:last-child {
+  margin-bottom: 0;
+}
+#newfooter .nf-group:hover .nf-iconmenu li {
+  transform: scale(1);
+}
+#sc_inspector {
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translateX(100%);
+  background-color: rgba(255,255,255,0.6);
+  /*transition: transform 0s linear 0s;*/
+}
+/*#show-inspector:active, #sc_inspector {
+  transform: translateX(0);
+}*/

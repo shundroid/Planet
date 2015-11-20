@@ -1,0 +1,13 @@
+{
+  "pla-tab" : {
+    "tab1": "Stage",
+    "tab2": "Block",
+    "tab3": "Object"
+  },
+  "tab1": {
+    "ac1": "Background",
+    "ac1_": {
+      "cont1": "style:"
+    }
+  }
+}

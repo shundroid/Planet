@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>PLANET</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+
+  <script type="text/javascript" src="bower_components/i18next/i18next.min.js"></script>
+  <link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.min.css" />
+  <script type="text/javascript" src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
+  <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" href="lib/fa/css/font-awesome.min.css" />
+  <script src="lib/wa/web-animations.min.js"></script>
+  <script type="text/javascript" src="js/PlaEditor.js"></script>
+  <script type="text/javascript" src="js/EditorUI.js"></script>
+  <script type="text/javascript" src="js/Editor.js"></script>
+  <link rel="stylesheet" href="lib/fadebox/css/fadebox.css" />
+  <script type="text/javascript" src="lib/fadebox/js/fadebox.js"></script>
+
+  <script type="text/javascript" src="lib/zeroclipboard/ZeroClipboard.js"></script>
+
+  <link rel="stylesheet" href="css/bsaddon.css" type="text/css" />
+
+</head>
+<body>
+  <div id="pla_page">
+    <div id="sc_ground_window">
+      <table id="sc_ground">
+      </table>
+      <div id="pla_objects">
+      </div>
+    </div>
+    <div id="sc_inspector">
+      <div class="pla_tab">
+        <ul class="nav nav-tabs">
+          <li class="active d-small-tab"><a href="#pla_tab1" data-toggle="tab" data-i18n="pla-tab.tab1"></a></li>
+          <li class="d-small-tab"><a href="#pla_tab2" data-toggle="tab" data-i18n="pla-tab.tab2"></a></li>
+          <li class="d-small-tab"><a href="#pla_tab3" data-toggle="tab" data-i18n="pla-tab.tab3"></a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade in active" id="pla_tab1">
+            <div class="pla_accordion panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#pla_tab1" href="#ac1" data-i18n="tab1.ac1">
+                  </a>
+                </h4>
+              </div>
+              <div id="ac1" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <span data-i18n="tab1.ac1_.cont1"></span>
+                    <select id="pla_skybox" class="selectpicker">
+                      <option value="sky-w1">W1（昼）</option>
+                      <option value="sky-w2">W2（昼）</option>
+                      <option value="sky-w1-sunset">W1（夕方）</option>
+                      <option value="sky-b">地下</option>
+                      <option value="sky-night">夜</option>
+                      <option value="sky-w0">W0</option>
+                      <option value="sky-castle">城</option>
+                    </select>
+                </div>
+              </div>
+            </div>
+            <div class="pla_accordion panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#pla_tab1" href="#ac2">
+                    カメラの固定
+                  </a>
+                </h4>
+              </div>
+              <div id="ac2" class="panel-collapse collapse">
+                <div class="panel-body">
+                  固定:
+                  <select id="pla_cameralock" class="selectpicker">
+                    <option value="PLA_NONE">固定しない</option>
+                    <option value="horizontal">横を固定</option>
+                    <option value="vertical">縦を固定</option>
+                  </select>
+                  <br />
+                  ハルスターとカメラの誤差:
+                  <input type="number" class="form-control" id="pla_camerahalstar" step="0.1" value="0" />
+                </div>
+              </div>
+            </div>
+            <div class="pla_accordion panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#pla_tab1" href="#ac14">
+                    BGM
+                  </a>
+                </h4>
+              </div>
+              <div id="ac14" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div class="btn-group">
+                    <button id="pla_sound_play" class="btn btn-default">
+                      <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                    </button>
+                    <button id="pla_sound_stop" class="btn btn-default">
+                      <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>
+                    </button>
+                    <select id="pla_sound" class="selectpicker">
+                      <option value="bgmz">ハルスターのテーマ</option>
+                      <option value="ms_mayoimori_s2">ﾏﾘｵｽﾄｰﾘｰより「迷いの森」</option>
+                      <option value="water">ハルスターのワルツ</option>
+                      <option value="pythagoraswitch">ピタゴラスイッチもどき</option>
+                      <option value="w2">ハルスターマーチ</option>
+                      <option value="galaxyplant">ギャラクシープラント</option>
+                      <option value="hevensdoor">ヘブンズドア</option>
+                      <option value="horror">怖いこと</option>
+                      <option value="bossrush">ボスラッシュ</option>
+                      <option value="doukutsu">洞窟</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pla_accordion panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#pla_tab1" href="#ac12">
+                    ヘッダー
+                  </a>
+                </h4>
+              </div>
+              <div id="ac12" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <textarea id="sc_header"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="pla_accordion panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#pla_tab1" href="#ac13">
+                    フッター
+                  </a>
+                </h4>
+              </div>
+              <div id="ac13" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <textarea id="sc_footer"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="pla_tab2">
+            <div class="pla_accordion panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#pla_tab2" href="#ac4">
+                    ブロックの名前
+                  </a>
+                </h4>
+              </div>
+              <div id="ac4" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <span id="pla_blockname"></span>
+                </div>
+              </div>
+            </div>
+            <div class="pla_accordion panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#pla_tab2" href="#ac5">
+                    ブロックのID
+                  </a>
+                </h4>
+              </div>
+              <div id="ac5" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <span id="pla_blockid"></span>
+                </div>
+              </div>
+            </div>
+            <div class="pla_accordion panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#pla_tab2" href="#ac6">
+                    座標
+                  </a>
+                </h4>
+              </div>
+              <div id="ac6" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <span id="pla_blockpos"></span>
+                </div>
+              </div>
+            </div>
+            <div class="pla_accordion panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#pla_tab2" href="#ac7">
+                    種別
+                  </a>
+                </h4>
+              </div>
+              <div id="ac7" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <span id="pla_blocktype"></span>
+                </div>
+              </div>
+            </div>
+            <div class="pla_accordion panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#pla_tab2" href="#ac8">
+                    説明
+                  </a>
+                </h4>
+              </div>
+              <div id="ac8" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <span id="pla_blockdescription"></span>
+                </div>
+              </div>
+            </div>
+            <div class="pla_accordion panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#pla_tab2" href="#ac9">
+                    属性
+                  </a>
+                </h4>
+              </div>
+              <div id="ac9" class="panel-collapse collapse in">
+                <div class="panel-body">
+                  <div id="pla_abilities">
+                  </div>
+                  <br />
+                  <div class="btn-group">
+                    <button id="pla_add_ability" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                    <select id="pla_abilities_select">
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="pla_tab3">
+            <div class="pla_accordion panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#pla_tab3" href="#ac10">
+                    オブジェクト
+                  </a>
+                </h4>
+              </div>
+              <div id="ac10" class="panel-collapse collapse in">
+                <div class="panel-body">
+                  <span id="pla_obj_name"></span><br />
+                  <div class="btn-group">
+                    <button id="pla_obj_unselect" class="btn btn-default">選択解除</button>
+                    <button id="pla_obj_delete" class="btn btn-default">削除</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pla_accordion panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#pla_tab3" href="#ac11">
+                    属性
+                  </a>
+                </h4>
+              </div>
+              <div id="ac11" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div id="pla_abilities_obj">
+                  </div>
+                  <br />
+                  <div class="btn-group">
+                    <button id="pla_add_ability_obj" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                    <select id="pla_abilities_select_obj">
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+  <footer id="newfooter">
+    <div class="nf-group">
+      <ul class="nf-iconmenu">
+        <li>
+          <i class="fa fa-pencil"></i>
+        </li>
+        <li>
+          <i class="fa fa-paint-brush"></i>
+        </li>
+        <li>
+          <i class="fa fa-eyedropper"></i>
+        </li>
+        <li>
+          <i class="fa fa-arrows"></i>
+        </li>
+        <li>
+          <i class="fa fa-mouse-pointer"></i>
+        </li>
+      </ul>
+      <div class="nf-icon">
+        <i class="fa fa-pencil-square-o"></i>
+      </div>
+    </div>
+    <div class="nf-group">
+      <ul class="nf-iconmenu">
+        <li>
+          <i class="fa fa-search-plus"></i>
+        </li>
+        <li>
+          <i class="fa fa-search-minus"></i>
+        </li>
+      </ul>
+      <div class="nf-icon">
+        <i class="fa fa-eye"></i>
+      </div>
+    </div>
+    <div class="nf-group">
+      <ul class="nf-iconmenu">
+        <li>
+          <i class="fa fa-magic"></i>
+        </li>
+        <li>
+          <i class="fa fa-th"></i>
+        </li>
+      </ul>
+      <div class="nf-icon">
+        <i class="fa fa-cube"></i>
+      </div>
+    </div>
+    <div class="nf-group">
+      <div class="nf-icon" id="show-inspector">
+        <i class="fa fa-bars"></i>
+      </div>
+    </div>
+    <div class="nf-group">
+      <div class="nf-icon">
+        <i class="fa fa-floppy-o"></i>
+      </div>
+    </div>
+    <div class="nf-tray">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </footer>
+  <footer id="pla_footer" style="display: none">
+    <select id="pla_mode_select" title="ブロックを配置するか、土管などのオブジェクトを配置するかを選んでください">
+      <option value="block">ブロックモード</option>
+      <option value="object">オブジェクトモード</option>
+      <option value="file">I/O モード</option>
+    </select>
+    <div class="pla_footer_menu" id="pla_footer_blockmode">
+      <select id="sc_icon_select" title="ブロックの種類を選んでください">
+      </select>
+      <select id="sc_add_select" style="display:none;">
+        <option value="0">後ろに追加</option>
+        <option value="1">前に追加</option>
+      </select>
+      <button id="sc_add_row" style="display:none;">縦に追加</button> <button id="sc_add_column" style="display:none;">横に追加</button>
+      <select id="pla_mode" style="display:none;">
+        <option value="auto">自動モード</option>
+        <option value="insert">追加モード</option>
+        <option value="delete">削除モード</option>
+      </select>
+      <button id="sc_all_clear">すべて削除</button>&nbsp;
+      <input type="checkbox" id="pla_isgrid" />&nbsp;<label for="pla_isgrid">グリッドを表示する</label>
+      <input type="checkbox" id="pla_isn" style="display:none;"/>&nbsp;<label for="pla_isn" style="display:none;">ぬりぬり</label>
+    </div>
+    <div class="pla_footer_menu" id="pla_footer_objectmode" style="display:none">
+      <span id="pla_object_name" data-name="dokan">土管</span>
+      <button id="pla_object_select_btn">...</button>
+      <button id="pla_object_add">追加</button>
+      <button id="pla_object_visibility">オブジェクトの非表示／表示</button>
+    </div>
+    <div class="pla_footer_menu" id="pla_footer_file" style="display:none">
+      &nbsp;
+      <button id="pla_header_btn">ヘッダー</button>&nbsp;<button id="pla_footer_btn">フッター</button>
+      <button id="sc_output_btn">書き出し</button>&nbsp;<button id="pla_input_btn">読み込み</button>&nbsp;
+    </div>
+    |
+    <span id="sc_pos">x: ? y: ?</span>
+  </footer>
+  <div id="pla_windows">
+    <audio src="sounds/bgmz.wav" id="pla_sound_elem" loop></audio>
+    <div class="fb-window" id="pla_object_dialog" data-width="500px" data-height="500px" data-show="hide" data-x="100">
+      <div class="fb-titlebar">
+        オブジェクトの選択 <button class="btn btn-default btn-xs fb-closebtn"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+      </div>
+      <div class="fb-content">
+        <select id="pla_objects_select" size="10">
+        </select>
+        プレビュー:<br />
+        <img src="images/objs/dokan.png" id="pla_object_preview" /><br />
+        <span id="pla_object_description"></span><br />
+        <button id="pla_object_submit" class="btn btn-default" style="margin-left:10px;"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;選択</button>
+      </div>
+    </div>
+    <div class="fb-window" id="pla_startup" data-width="500px" data-height="600px" data-x="40%" data-y="10px">
+      <div class="fb-titlebar">
+        PLANET <button class="btn btn-default btn-xs fb-closebtn"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+      </div>
+      <div class="fb-content">
+        <img src="images/logo.png" style="width: 100%" alt="" /><br />
+        PLANET (プラネット)<br />
+        <span style="font-size: small">2015-09-26 v0.5.0</span><br />
+        <br />
+        Unity2D向けのステージ自動生成言語「Planet」<br />
+        のエディターです<br />
+        <br />
+        &copy; 2015, Shundroid &amp; みんちすたじお. All rights reserved.<br />
+        <br />
+        <img src="images/unity.png" style="width: 200px" alt="" /> <img src="images/js.png" style="width: 100px" alt="" />
+      </div>
+    </div>
+    <div class="fb-window" id="pla_tools">
+      <div class="fb-titlebar">
+        ショートカット
+      </div>
+      <table id="pla_tools_items">
+        <tr>
+          <td>
+            <button type="button" class="btn btn-default" aria-label="Left Align" data-toggle="tooltip" title="ブロック自動" data-plamode="block-auto">
+              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-default" aria-label="Left Align" data-toggle="tooltip" title="ブロック追加" data-plamode="block-add">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-default" aria-label="Left Align" data-toggle="tooltip" title="ブロック削除" data-plamode="block-delete">
+              <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+            </button>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button type="button" class="btn btn-default" aria-label="Left Align" data-toggle="tooltip" title="ぬりぬり追加" data-plamode="paint-add">
+              <span class="glyphicon glyphicon-tint" aria-hidden="true"></span>
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-default" aria-label="Left Align" data-toggle="tooltip" title="ぬりぬり削除" data-plamode="paint-delete">
+              <span class="glyphicon glyphicon-erase" aria-hidden="true"></span>
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-default" aria-label="Left Align" data-toggle="tooltip" title="スポイト" data-plamode="mode-copy">
+              <span class="glyphicon glyphicon-baby-formula" aria-hidden="true"></span>
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-default" aria-label="Left Align" data-toggle="tooltip" title="プロパティ" data-plamode="mode-prop">
+              <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button type="button" class="btn btn-default" aria-label="Left Align" data-toggle="tooltip" title="書き出し" data-plamode="io-export">
+              <span class="glyphicon glyphicon-export" aria-hidden="true"></span>
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-default" aria-label="Left Align" data-toggle="tooltip" title="読み込み" data-plamode="io-import">
+              <span class="glyphicon glyphicon-import" aria-hidden="true"></span>
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-default" aria-label="Left Align" data-toggle="tooltip" title="拡大" data-plamode="zoom-in">
+              <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-default" aria-label="Left Align" data-toggle="tooltip" title="縮小" data-plamode="zoom-out">
+              <span class="glyphicon glyphicon-zoom-out" aria-hidden="true"></span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <button type="button" class="btn btn-default" aria-label="Left Align" data-toggle="tooltip" title="上に追加" data-plamode="addline-up">
+              <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
+            </button>
+          </td>
+          <td>
+          </td>
+          <td>
+            <button type="button" class="btn btn-default" aria-label="Left Align" data-toggle="tooltip" title="スタートメニュー" data-plamode="show-start">
+              <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button type="button" class="btn btn-default" aria-label="Left Align" data-toggle="tooltip" title="左に追加" data-plamode="addline-left">
+              <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-default" aria-label="Left Align" data-toggle="tooltip" title="オブジェクトの非表示" data-plamode="obj-show">
+              <span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span>
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-default" aria-label="Left Align" data-toggle="tooltip" title="右に追加" data-plamode="addline-right">
+              <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+            </button>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <button type="button" class="btn btn-default" aria-label="Left Align" data-toggle="tooltip" title="下に追加" data-plamode="addline-down">
+              <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+            </button>
+          </td>
+          <td></td>
+          <td>
+            <button type="button" class="btn btn-default" aria-label="Left Align" data-toggle="tooltip" title="オブジェクトの選択" data-plamode="mode-select">
+              <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="fb-window" id="pla_outputbox" data-x="50%" data-y="50%" data-show="hide">
+      <div class="fb-titlebar">
+        書き出し・読み込み<button class="btn btn-default btn-xs fb-closebtn"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+      </div>
+      <div class="fb-content">
+        <textarea id="sc_output"></textarea><br />
+        <div id="pla_input_content" class="btn-group" style="display: none">
+          <button id="sc_input_btn" class="btn btn-default"><span class="glyphicon glyphicon-import" aria-hidden="true"></span>&nbsp;読み込み</button>
+          <!-- <button class="btn btn-default pla-tooltip" data-toggle="tooltip" title="貼り付け"><span class="glyphicon glyphicon-paste" aria-hidden="true"></span></button>  -->
+        </div>
+        <div id="pla_output_content" class="btn-group" style="display: none">
+          <button class="btn btn-default" id="pla-copy" data-clipboard-target="sc_output"><span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span>&nbsp;コピー</button>
+        </div>
+<!--        <div class="btn-group">
+          <button class="btn btn-default"><span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span></button>
+          <button class="btn btn-default"><span class="glyphicon glyphicon-paste" aria-hidden="true"></span></button> 
+        </div>
+ -->      </div>
+    </div>
+  </div>
+</body>
+</html>

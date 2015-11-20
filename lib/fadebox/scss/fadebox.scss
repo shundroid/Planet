@@ -1,0 +1,33 @@
+.fb-window {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 10;
+  background-color: #eee;
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.4);
+  display: none;
+  .fb-titlebar {
+    background-color: #fff;
+    border-radius: 10px 10px 0 0;
+    padding-left: 10px;
+    padding-top: 5px;
+    margin-bottom: 10px;
+    cursor: move;
+    height: 30px;
+    position: relative;
+    .fb-closebtn {
+      position: absolute;
+      right: 10px;
+    }
+  }
+  .fb-content {
+    padding: 0 10px 10px 10px;
+    height: 100%;
+  }
+}
+.fb-active-window {
+  z-index: 11;
+}

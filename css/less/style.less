@@ -1,0 +1,249 @@
+@grid-size: 48px;
+@obj-default-size: 100px;
+
+* {
+	font-family: "Meiryo";
+}
+html {
+	height: 100%;
+}
+body {
+	overflow: hidden;
+	box-sizing: border-box;
+	margin: 0;
+	height: 100%;
+}
+input, button, select, option {
+	font-family: "MS UI Gothic";
+}
+
+select[size] {
+	font-family: "Meiryo";
+}
+
+.sc_box_tr {
+	height: @grid-size;
+}
+.sc_box_td {
+	width: @grid-size;
+	height: @grid-size;
+	border: 1px solid gray;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	cursor: crosshair;
+	padding: 0 1px 1px 0;
+	box-sizing: content-box;
+}
+
+#sc_ground {
+	border-collapse: collapse;
+	position: relative;
+}
+
+.pla_footer_menu {
+	display: inline-block;
+}
+
+.pla_obj {
+	width: @obj-default-size;
+	height: @obj-default-size;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+	left: -19px;
+	top: 331px;
+	z-index: 1;
+	cursor: move;
+}
+
+table {
+	table-layout: fixed;
+}
+
+#sc_ground_window {
+	width: 100%;
+	margin: 0;
+	height: 100%;
+	overflow: scroll;
+	padding: 5px;
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url("../images/skybox/sky-w1.png");
+	position: relative;
+}
+
+#pla_objects {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0;
+}
+
+#sc_inspector {
+	float: right;
+	width: 20%;
+	height: 100%;
+	overflow-y: scroll;
+	position: fixed;
+	right: 0;
+	top: 0;
+	transform: translateX(100%);
+	background-color: rgba(255,255,255,.6);
+  padding-left: 10px;
+}
+
+.pla_obj_select {
+	border: 1px solid black;
+}
+.pla_tab {
+	height: 100%;
+}
+h3 {
+	margin: 0;
+}
+#pla_page {
+	margin: 0;
+	height: 100%;
+}
+#pla_footer {
+	border-top: 1px solid gray;
+	position: fixed;
+	width: 100%;
+	height: 30px;
+	bottom: 0;
+	left: 0;
+}
+#sc_output {
+	width: 100%;
+	height: 80%;
+	margin-bottom: 5px;
+	resize: none;
+}
+textarea {
+	width: 100%;
+	height: 60%;
+	float: left;
+}
+#pla_object_preview {
+	max-width: 40%;
+	max-height: 40%;
+}
+#pla_object_description {
+	height: 40%;
+}
+@pla-tool-item-size: 40px;
+#pla_tools #pla_tools_items {
+	border-collapse: collapse;
+	margin: 0 auto;
+	tr td {
+		width: @pla-tool-item-size;
+		height: @pla-tool-item-size;
+	}
+}
+
+// newfooter
+.set-size-bg-radius (@size, @bg, @radius) {
+	width: @size;
+	height: @size;
+	border-radius: @radius;
+	background-color: @bg;
+}
+@nf-group-size: 50px;
+@nf-iconmenu-size: 40px;
+@nf-padding-bottom: 10px;
+@nf-padding-top: 10px;
+#newfooter {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: @nf-group-size+@nf-padding-bottom+@nf-padding-top;
+	padding: 0 0 0 40px;
+  display: flex;
+	.nf-group {
+		margin-right: 30px;
+		width: @nf-group-size;
+		height: @nf-group-size;
+    margin-bottom: @nf-padding-bottom;
+    margin-top: @nf-padding-top;
+		.nf-icon {
+			background-color: #3ed8ff;
+			text-align: center;
+			vertical-align: middle;
+			border-radius: 50px;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			user-select: none;
+			transition: transform 0.4s cubic-bezier(.56,-1.76,.34,3.29) 0s;
+			cursor: pointer;
+			height: @nf-group-size;
+			line-height: @nf-group-size;
+			position: relative;
+			font-size: 18px;
+			width: @nf-group-size;
+		}
+		.nf-menu {
+			position: relative;
+			bottom: 200%;
+			width: 125px;
+			background-color: rgba(255,255,255,0.6);
+			padding: 0;
+			left: -32px;
+			opacity: 0;
+			transition: opacity 0.4s cubic-bezier(.45,.05,.55,.95) 0s;
+		}
+		.nf-iconmenu {
+			list-style-type: none;
+			position: fixed;
+			bottom: @nf-group-size+15;
+			padding-left: 5px;
+			li {
+				.set-size-bg-radius(@nf-iconmenu-size, #0f0, @nf-iconmenu-size);
+				transform: scale(0);
+				transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55) 0s;
+				margin-bottom: 10px;
+				text-align: center;
+				line-height: 40px;
+				cursor: pointer;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+		&:hover {
+			.nf-menu {
+				opacity: 1;
+			}	
+			.nf-icon {
+				transform: scale(1.2);
+			}
+			.nf-iconmenu {
+				li {
+					transform: scale(1);
+				}
+			}
+		}
+	}
+  .nf-tray {
+    width: 100%;
+    height: @nf-group-size+@nf-padding-bottom+@nf-padding-top;
+    background-color: rgba(255,255,255,0.6);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-right: 22%;
+    ul {
+      list-style-type: none;
+      display: flex;
+      padding: 10px;
+      li {
+        background-image: url("../images/mapicons/ami.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        margin-right: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "PlanetX",
+  "description": "planet",
+  "main": "index.js",
+  "authors": [
+    "shundroid"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "planet"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.4",
+    "i18next": "~1.10.3",
+    "bootstrap": "~3.3.5",
+    "bootstrap-select": "~1.7.4"
+  },
+  "exportsOverride": {
+    "jquery": {
+      "js": "**/jquery.min.js"
+    },
+    "i18next": {
+      "js": "**/i18next.min.js"
+    },
+    "bootstrap": {
+      "js": "**/bootstrap.min.js",
+      "css": "**/bootstrap.min.css",
+      "fonts": "fonts/*"
+    },
+    "bootstrap-select": {
+      "css": "**/bootstrap-select.min.css",
+      "js": "**/bootstrap-select.min.js"
+    }
+  }
+}

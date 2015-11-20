@@ -1,0 +1,225 @@
+* {
+  font-family: "Meiryo";
+}
+html {
+  height: 100%;
+}
+body {
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  height: 100%;
+}
+input,
+button,
+select,
+option {
+  font-family: "MS UI Gothic";
+}
+select[size] {
+  font-family: "Meiryo";
+}
+.sc_box_tr {
+  height: 48px;
+}
+.sc_box_td {
+  width: 48px;
+  height: 48px;
+  border: 1px solid gray;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: crosshair;
+  padding: 0 1px 1px 0;
+  box-sizing: content-box;
+}
+#sc_ground {
+  border-collapse: collapse;
+  position: relative;
+}
+.pla_footer_menu {
+  display: inline-block;
+}
+.pla_obj {
+  width: 100px;
+  height: 100px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -19px;
+  top: 331px;
+  z-index: 1;
+  cursor: move;
+}
+table {
+  table-layout: fixed;
+}
+#sc_ground_window {
+  width: 100%;
+  margin: 0;
+  height: 100%;
+  overflow: scroll;
+  padding: 5px;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../images/skybox/sky-w1.png");
+  position: relative;
+}
+#pla_objects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+}
+#sc_inspector {
+  float: right;
+  width: 20%;
+  height: 100%;
+  overflow-y: scroll;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translateX(100%);
+  background-color: rgba(255, 255, 255, 0.6);
+  padding-left: 10px;
+}
+.pla_obj_select {
+  border: 1px solid black;
+}
+.pla_tab {
+  height: 100%;
+}
+h3 {
+  margin: 0;
+}
+#pla_page {
+  margin: 0;
+  height: 100%;
+}
+#pla_footer {
+  border-top: 1px solid gray;
+  position: fixed;
+  width: 100%;
+  height: 30px;
+  bottom: 0;
+  left: 0;
+}
+#sc_output {
+  width: 100%;
+  height: 80%;
+  margin-bottom: 5px;
+  resize: none;
+}
+textarea {
+  width: 100%;
+  height: 60%;
+  float: left;
+}
+#pla_object_preview {
+  max-width: 40%;
+  max-height: 40%;
+}
+#pla_object_description {
+  height: 40%;
+}
+#pla_tools #pla_tools_items {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+#pla_tools #pla_tools_items tr td {
+  width: 40px;
+  height: 40px;
+}
+#newfooter {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  padding: 0 0 0 40px;
+  display: flex;
+}
+#newfooter .nf-group {
+  margin-right: 30px;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+#newfooter .nf-group .nf-icon {
+  background-color: #3ed8ff;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  transition: transform 0.4s cubic-bezier(0.56, -1.76, 0.34, 3.29) 0s;
+  cursor: pointer;
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  font-size: 18px;
+  width: 50px;
+}
+#newfooter .nf-group .nf-menu {
+  position: relative;
+  bottom: 200%;
+  width: 125px;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 0;
+  left: -32px;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.45, 0.05, 0.55, 0.95) 0s;
+}
+#newfooter .nf-group .nf-iconmenu {
+  list-style-type: none;
+  position: fixed;
+  bottom: 65px;
+  padding-left: 5px;
+}
+#newfooter .nf-group .nf-iconmenu li {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background-color: #0f0;
+  transform: scale(0);
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
+  margin-bottom: 10px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+#newfooter .nf-group .nf-iconmenu li:last-child {
+  margin-bottom: 0;
+}
+#newfooter .nf-group:hover .nf-menu {
+  opacity: 1;
+}
+#newfooter .nf-group:hover .nf-icon {
+  transform: scale(1.2);
+}
+#newfooter .nf-group:hover .nf-iconmenu li {
+  transform: scale(1);
+}
+#newfooter .nf-tray {
+  width: 100%;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-right: 22%;
+}
+#newfooter .nf-tray ul {
+  list-style-type: none;
+  display: flex;
+  padding: 10px;
+}
+#newfooter .nf-tray ul li {
+  background-image: url("../images/mapicons/ami.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+}

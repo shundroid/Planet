@@ -1,0 +1,318 @@
+{
+  "w1/block2": {
+    "name": "W1草付ブロック",
+    "filename": "images/mapicons/w1block2-2.png"
+  },
+  "w1/block1": {
+    "name": "W1ブロック",
+    "filename": "images/mapicons/w1block1-1.png"
+  },
+  "block1": {
+    "name": "ごく普通のブロック",
+    "filename": "images/mapicons/block1.png"
+  },
+  "bridge1": {
+    "name": "すりぬけブリッジ",
+    "filename": "images/mapicons/bridge1.png"
+  },
+  "brick": {
+    "name": "レンガブロック",
+    "filename": "images/mapicons/brick.png"
+  },
+  "fance1": {
+    "name": "木のフェンス",
+    "filename": "images/mapicons/fance1.png"
+  },
+  "fance2": {
+    "name": "石のフェンス",
+    "filename": "images/mapicons/fance2.png"
+  },
+  "hashigo": {
+    "name": "はしご",
+    "filename": "images/mapicons/hashigo.png"
+  },
+  "ami": {
+    "name": "金網",
+    "filename": "images/mapicons/ami.png"
+  },
+  "wb/block1": {
+    "name": "地下ブロック",
+    "filename": "images/mapicons/wbblock.png"
+  },
+  "tikared": {
+    "name": "ちかちかブロック（赤）",
+    "filename": "images/mapicons/tikared.png"
+  },
+  "tikagreen": {
+    "name": "ちかちかブロック（緑）",
+    "filename": "images/mapicons/tikagreen.png"
+  },
+  "naanaa": {
+    "name": "なあなあブロック",
+    "filename": "images/mapicons/naanaa.png"
+  },
+  "bomblock": {
+    "name": "消えるブロック",
+    "filename": "images/mapicons/bomblock.png"
+  },
+  "w0/block2": {
+    "name": "W0ブロック",
+    "filename": "images/mapicons/w0block2.png"
+  },
+  "tobottomleft": {
+    "name": "左下掲示板↙",
+    "filename": "images/mapicons/keiziban/tobottomleft.png"
+  },
+  "tobottomright": {
+    "name": "右下掲示板↘",
+    "filename": "images/mapicons/keiziban/tobottomright.png"
+  },
+  "todown": {
+    "name": "下掲示板↓",
+    "filename": "images/mapicons/keiziban/todown.png"
+  },
+  "toup": {
+    "name": "上掲示板↑",
+    "filename": "images/mapicons/keiziban/toup.png"
+  },
+  "toleft": {
+    "name": "左掲示板←",
+    "filename": "images/mapicons/keiziban/toleft.png"
+  },
+  "toright": {
+    "name": "右掲示板→",
+    "filename": "images/mapicons/keiziban/toright.png"
+  },
+  "totopleft": {
+    "name": "左上掲示板↖",
+    "filename": "images/mapicons/keiziban/totopleft.png"
+  },
+  "totopright": {
+    "name": "右上掲示板↗",
+    "filename": "images/mapicons/keiziban/totopright.png"
+  },
+  "toge": {
+    "name": "とげ↑",
+    "filename": "images/mapicons/toge.png"
+  },
+  "toge2": {
+    "name": "とげ↓",
+    "filename": "images/mapicons/toge2.png"
+  },
+  "toge3": {
+    "name": "とげ←",
+    "filename": "images/mapicons/toge3.png"
+  },
+  "toge4": {
+    "name": "とげ→",
+    "filename": "images/mapicons/toge4.png"
+  },
+  "switchblock/pink_off": {
+    "name": "ピンクのブロック（オフ）",
+    "filename": "images/mapicons/switchblockpink_off.png"
+  },
+  "switchblock/pink": {
+    "name": "ピンクのブロック（オン）",
+    "filename": "images/mapicons/switchblockpink_on.png"
+  },
+  "switchblock/brown_off": {
+    "name": "茶色のブロック（オフ）",
+    "filename": "images/mapicons/switchblockbrown_off.png"
+  },
+  "switchblock/brown": {
+    "name": "茶色のブロック（オン）",
+    "filename": "images/mapicons/switchblockbrown_on.png"
+  },
+  "switchblock/pink_sw": {
+    "name": "ピンクのスイッチ",
+    "filename": "images/mapicons/switchblockpink_sw.png"
+  },
+  "switchblock/brown_sw": {
+    "name": "茶色のスイッチ",
+    "filename": "images/mapicons/switchblockbrown_sw.png"
+  },
+  "SkeletonBlock": {
+    "name": "透明ブロック",
+    "filename": "images/mapicons/SkeletonBlock.png"
+  },
+  "supergrape": {
+    "name": "謎のぶどう",
+    "filename": "images/mapicons/supergrape.png"
+  },
+  "water/water": {
+    "name": "水",
+    "filename": "images/mapicons/water.slash.water.png"
+  },
+  "dende": {
+    "name": "でんで←",
+    "filename": "images/mapicons/dende.png"
+  },
+  "dende2": {
+    "name": "でんで→",
+    "filename": "images/mapicons/dende2.png"
+  },
+  "dende_dancer": {
+    "name": "でんでダンサー",
+    "filename": "images/mapicons/dende_dancer.png"
+  },
+  "sunsun": {
+    "name": "太陽君",
+    "filename": "images/mapicons/sunsun.png"
+  },
+  "sunsun_anim": {
+    "name": "動く太陽君",
+    "filename": "images/mapicons/sunsun_anim.png"
+  },
+  "heart": {
+    "name": "ハートさん",
+    "filename": "images/mapicons/heart.png"
+  },
+  "santens": {
+    "name": "さんてん0.1kgx6",
+    "filename": "images/mapicons/santens.png"
+  },
+  "santens2": {
+    "name": "さんてん2kgx6",
+    "filename": "images/mapicons/santens2.png"
+  },
+  "santens3": {
+    "name": "さんてん4kgx6",
+    "filename": "images/mapicons/santens3.png"
+  },
+  "santens4": {
+    "name": "さんてん10kgx6",
+    "filename": "images/mapicons/santens4.png"
+  },
+  "santenbs": {
+    "name": "はねるさんてん0.1kgx6",
+    "filename": "images/mapicons/santenbs.png"
+  },
+  "neekaa": {
+    "name": "ドウセかにですよドーセ【右】",
+    "filename": "images/mapicons/neekaa.png"
+  },
+  "neekaa2": {
+    "name": "ドウセかにですよドーセ【左】",
+    "filename": "images/mapicons/neekaa2.png"
+  },
+  "suika": {
+    "name": "すいか",
+    "filename": "images/mapicons/suika.png"
+  },
+  "magma": {
+    "name": "マグマ表面",
+    "filename": "images/mapicons/magma.png"
+  },
+  "magma2": {
+    "name": "マグマ",
+    "filename": "images/mapicons/magma2.png"
+  },
+  "kill": {
+    "name": "死のブロック",
+    "filename": "images/mapicons/kill2.png"
+  },
+  "w1/say": {
+    "name": "メッセージブロック",
+    "filename": "images/mapicons/sayblock.png"
+  },
+  "blueswitch": {
+    "name": "青スイッチ",
+    "filename": "images/mapicons/blueswitch.png"
+  },
+  "coin/coin1": {
+    "name": "1コイン",
+    "filename": "images/mapicons/coin/coin1.png"
+  },
+  "coin/coin2": {
+    "name": "2コイン",
+    "filename": "images/mapicons/coin/coin2.png"
+  },
+  "coin/coin3": {
+    "name": "5コイン",
+    "filename": "images/mapicons/coin/coin3.png"
+  },
+  "coin/coin4": {
+    "name": "10コイン",
+    "filename": "images/mapicons/coin/coin4.png"
+  },
+  "key/sphere": {
+    "name": "鍵",
+    "filename": "images/mapicons/keysphere.png"
+  },
+  "ShundroidX/DestroyZone": {
+    "name": "デストロイ",
+    "filename": "images/mapicons/destroy.png"
+  },
+  "moves/down": {
+    "name": "ムーブ下",
+    "filename": "images/mapicons/movetod.png"
+  },
+  "moves/up": {
+    "name": "ムーブ上",
+    "filename": "images/mapicons/movetou.png"
+  },
+  "moves/left": {
+    "name": "ムーブ左",
+    "filename": "images/mapicons/movetor.png"
+  },
+  "moves/right": {
+    "name": "ムーブ右",
+    "filename": "images/mapicons/movetol.png"
+  },
+  "na/nasu": {
+    "name": "なす",
+    "filename": "images/mapicons/nasu.png"
+  },
+  "na/akanasu": {
+    "name": "あかなす",
+    "filename": "images/mapicons/akanasu.png"
+  },
+  "items/heartball": {
+    "name": "ハートボール",
+    "filename": "images/mapicons/heartball.png"
+  },
+  "baadon": {
+    "name": "ばあどん",
+    "filename": "images/mapicons/baadon.png"
+  },
+  "fishzone": {
+    "name": "フィッシュゾーン",
+    "filename": "images/mapicons/fishzone.png"
+  },
+  "suikas/high": {
+    "name": "早いちょろスイカ",
+    "filename": "images/mapicons/suika.png"
+  },
+  "suikas/mid": {
+    "name": "普通のちょろスイカ",
+    "filename": "images/mapicons/suika.png"
+  },
+  "suikas/low": {
+    "name": "遅いちょろスイカ",
+    "filename": "images/mapicons/suika.png"
+  },
+  "spinball": {
+    "name": "くるくる",
+    "filename": "images/mapicons/spinball.png"
+  },
+  "chore": {
+    "name": "雑用",
+    "filename": "images/mapicons/chore.png"
+  },
+  "rail/rail1": {
+    "name": "横向きレール",
+    "filename": "images/mapicons/rail1.png"
+  },
+  "rail/rail2": {
+    "name": "縦向きレール",
+    "filename": "images/mapicons/rail2.png"
+  },
+  "rail/rail3": {
+    "name": "ななめレール1",
+    "filename": "images/mapicons/rail3.png"
+  },
+  "rail/rail4": {
+    "name": "ななめレール2",
+    "filename": "images/mapicons/rail4.png"
+  }
+}
